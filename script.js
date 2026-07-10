@@ -48,7 +48,7 @@
 
   const header = document.getElementById("header");
   const menuToggle = document.getElementById("menuToggle");
-  const nav = document.getElementById("nav");
+  const nav = document.getElementById("nav"); // drawer mobile
   const yearEl = document.getElementById("year");
   const navLinks = document.querySelectorAll(".nav__link");
 
@@ -123,7 +123,7 @@
     });
   }
 
-  // Active nav link by section
+  // Active nav link by section (desktop + mobile)
   const sections = document.querySelectorAll("section[id]");
   function highlightNav() {
     const scrollY = window.scrollY + 120;
@@ -131,11 +131,11 @@
       const top = section.offsetTop;
       const height = section.offsetHeight;
       const id = section.getAttribute("id");
-      const link = document.querySelector(`.nav__link[href="#${id}"]`);
-      if (!link) return;
+      const links = document.querySelectorAll(`.nav__link[href="#${id}"]`);
+      if (!links.length) return;
       if (scrollY >= top && scrollY < top + height) {
         navLinks.forEach((l) => l.classList.remove("active"));
-        link.classList.add("active");
+        links.forEach((link) => link.classList.add("active"));
       }
     });
   }
