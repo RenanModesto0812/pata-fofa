@@ -19,16 +19,21 @@
         <img src="logo.png" alt="PataFofa Estética Animal" class="logo__img" />
         <span class="logo__text">Pata<span>Fofa</span></span>
       </a>
-      <nav class="nav" id="nav">
+      <div class="nav-backdrop" id="navBackdrop" hidden></div>
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <div class="nav__mobile-head">
+          <span class="nav__mobile-title">Menu</span>
+          <button type="button" class="nav__close" id="navClose" aria-label="Fechar menu">×</button>
+        </div>
         <a href="#inicio" class="nav__link">Início</a>
         <a href="#sobre" class="nav__link">Sobre</a>
         <a href="#servicos" class="nav__link">Serviços</a>
         <a href="#produtos" class="nav__link">Produtos</a>
         <a href="#agendar" class="nav__link">Agendar</a>
         <a href="#contato" class="nav__link">Contato</a>
-        <a href="#agendar" class="btn btn--nav">Agendar</a>
+        <a href="#agendar" class="btn btn--nav">Agendar horário</a>
       </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
     </div>
